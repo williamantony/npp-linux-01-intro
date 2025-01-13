@@ -63,9 +63,16 @@ It will then run `sudo containerlab destroy` to clean it up, copy the output to 
 
 To re-run it, you may need to delete the previous submission directory.
 
-Note: If you see an error similar to the following, make sure you have not manually copied onepkt.py to the host folder(s). Let the script do that for you to avoid permission issues.
+# Troubleshooting and Common Issues
 
+- This lab should not require any modifications to capture_submission.sh.
+- You will execute capture_submission.sh which will then execute do-lab.sh.  You should not need to re-implement any part of capture_submission.sh within do-lab.sh.
+- capture_submission.sh will deploy and destroy the containerlab topology itself.  The containerlab should not be running prior to running capture_submission.sh.
+- Successful execution of capture_submission.sh and generation of submission.tgz does not mean your lab configuration is correct.  If you receive a 0 and/or error from the grader, validate that your bridge configuration is correct and that packets are able to be sent and received between your containerlab hosts.  Also, if the pcap files in your submission are 0 bytes in size, this is indicative of an error in your configuration.
+- When executing capture_submission.sh, if you see an error similar to the following, make sure you have not manually copied onepkt.py to the host folder(s). Let the script do that for you to avoid permission issues.
+```
 OCI runtime exec failed: exec failed: unable to start container process: exec: "/lab-folder/onepkt.py": permission denied: unknown
+```
 
 # License
 
