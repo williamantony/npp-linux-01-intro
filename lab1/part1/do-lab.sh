@@ -8,4 +8,4 @@ docker exec -it clab-lab1-part1-switch ip link set mybridge up
 docker exec -it clab-lab1-part1-switch ip link set eth1 master mybridge
 docker exec -it clab-lab1-part1-switch ip link set eth2 master mybridge
 docker exec -it clab-lab1-part1-switch ip link set eth3 master mybridge
-docker exec -it clab-lab1-part1-switch ip link set eth3 master mybridge
+docker exec -it clab-lab1-part1-switch ip link set eth4 master mybridge
